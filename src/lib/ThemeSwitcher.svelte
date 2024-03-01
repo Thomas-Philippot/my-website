@@ -36,8 +36,8 @@
 	})
 </script>
 
-<select bind:value={current_theme} class="bg-base">
+<select bind:value={current_theme} class="bg-base" aria-label="Theme">
 	{#each Object.keys(flavors) as flavor}
-		<option value="{flavor}" class="border-red-400" label="{flavor}">{flavor}</option>
+		<option value="{flavor}" class="border-red-400">{flavor}</option>
 	{/each}
 </select>
