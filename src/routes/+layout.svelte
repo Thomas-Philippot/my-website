@@ -17,11 +17,11 @@
 <nav class="w-full h-10 py-10 px-2">
 	<ul class="flex justify-end items-center">
 		<li>
-			<select bind:value={$locale} class="mx-6 bg-base font-bold text-xl focus:outline-none">
-				<option value="fr" label="Français">
+			<select bind:value={$locale} class="mx-6 bg-base font-bold text-xl focus:outline-none" aria-label="Language">
+				<option value="fr">
 					🇫🇷 Français
 				</option>
-				<option value="en" label="English">
+				<option value="en">
 					🇬🇧 English
 				</option>
 			</select>
