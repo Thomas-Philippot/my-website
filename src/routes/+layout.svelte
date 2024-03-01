@@ -18,10 +18,10 @@
 	<ul class="flex justify-end items-center">
 		<li>
 			<select bind:value={$locale} class="mx-6 bg-base font-bold text-xl focus:outline-none">
-				<option value="fr">
+				<option value="fr" label="Français">
 					🇫🇷 Français
 				</option>
-				<option value="en">
+				<option value="en" label="English">
 					🇬🇧 English
 				</option>
 			</select>

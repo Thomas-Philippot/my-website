@@ -38,6 +38,6 @@
 
 <select bind:value={current_theme} class="bg-base">
 	{#each Object.keys(flavors) as flavor}
-		<option value="{flavor}" class="border-red-400">{flavor}</option>
+		<option value="{flavor}" class="border-red-400" label="{flavor}">{flavor}</option>
 	{/each}
 </select>
