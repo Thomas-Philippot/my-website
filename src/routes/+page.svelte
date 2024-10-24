@@ -28,11 +28,6 @@
 						<FontAwesomeIcon icon={faGithub} />
 					</a>
 				</li>
-				<li class="text-3xl font-semibold mx-2 hover:text-mauve">
-					<a href="https://piaille.fr/@adewale" aria-label="Follow me on Mastodon">
-						<FontAwesomeIcon icon={faMastodon} />
-					</a>
-				</li>
 				<li class="text-3xl font-semibold mx-2 hover:text-text/70">
 					<a href="https://dev.to/thomas_ph35" aria-label="Follow me on dev.to">
 						<FontAwesomeIcon icon={faDev} />
