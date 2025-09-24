@@ -1,11 +1,25 @@
 <script lang="ts">
 	import { t } from '../i18n';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { faGithub, faMastodon, faDev, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+	import { faGithub, faDev, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 	import { config } from '@fortawesome/fontawesome-svg-core';
 
 	import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
 	config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
+
+
+	function getAge() {
+		const today = new Date();
+		const birthDate = new Date('1997-11-02');
+		let age = today.getFullYear() - birthDate.getFullYear();
+		const monthDiff = today.getMonth() - birthDate.getMonth();
+		// If today is before my birthday
+		if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+			age--;
+		}
+		return age;
+	}
+
 </script>
 
 
@@ -20,7 +34,7 @@
 	</div>
 	<div class="shrink text-center md:text-left py-2 mt-0 sm:mt-1 md:mt-40">
 		<h1 class="text-6xl font-semibold my-8 text-mauve tracking-tight">{ $t('welcome') }</h1>
-		<p class="text-2xl">{ $t('tagline') }</p>
+		<p class="text-2xl">{ $t('tagline') } { getAge() } { $t('taglineEnd') }</p>
 		<div class="my-6">
 			<ul class="flex justify-center md:justify-start">
 				<li class="text-3xl font-semibold mx-2 hover:text-text/70">
@@ -49,7 +63,7 @@
 			<p class="text-sm text-subtext0 uppercase mt-1">2018 - { $t('today') }</p>
 			<div class="flex-1">
 				<h3 class="text-xl font-semibold">{ $t('fullstack-dev') }</h3>
-				<p class="mt-2">Laboratoire MyLab, Chateaugiron</p>
+				<p class="mt-2">Laboratoire MyLab, Janzé</p>
 				<p class="text-xs font-light mt-2">{ $t('mylab-exp') }</p>
 				<div class="flex flex-wrap gap-2 py-2">
 					<div class="rounded-full text-xs text-flamingo font-medium leading-5 border border-flamingo px-3 py-1">
@@ -80,8 +94,27 @@
 </section>
 <section class="py-16 px-6 xl:px-0">
 	<h2 class="text-4xl font-semibold text-teal mb-5">{ $t('projects') }</h2>
-	<div class="flex flex-col lg:flex-row flex-wrap items-center justify-center gap-6">
-		<a class="rounded-md border-2 border-teal w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+	<div class="flex flex-col md:flex-row flex-wrap items-center justify-start gap-6">
+		<a class="rounded-md border-2 border-teal w-full sm:w-auto"
+			 href="https://github.com/Thomas-Philippot/removarr">
+			<enhanced:img
+				src="$lib/assets/sites/removarr.webp"
+				alt="Le github de Removarr"
+				class="rounded-t-md w-full h-40"
+				sizes="xs:328px"
+			/>
+			<div class="p-5">
+				<div class="text-2xl font-bold text-teal">
+					Removarr
+				</div>
+				<div class="flex gap-2 flex-wrap my-3">
+					<div class="rounded-full text-clip text-xs leading-5 border border-teal px-3 py-1">Nuxt 3</div>
+					<div class="rounded-full text-xs leading-5 border border-teal px-3 py-1">TailwindCSS</div>
+					<div class="rounded-full text-xs leading-5 border border-teal px-3 py-1">Docker</div>
+				</div>
+			</div>
+		</a>
+		<a class="rounded-md border-2 border-teal w-full sm:w-auto"
 			 href="https://mylene-naturo.netlify.app">
 			<enhanced:img
 				src="$lib/assets/sites/mylene-naturo.webp"
@@ -100,7 +133,7 @@
 				</div>
 			</div>
 		</a>
-		<a class="rounded-md border-2 border-teal w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+		<a class="rounded-md border-2 border-teal w-full sm:w-auto"
 			 href="https://mineral-contest.netlify.app">
 			<enhanced:img
 				src="$lib/assets/sites/mineral-contest.webp"

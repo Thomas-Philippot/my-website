@@ -1,7 +1,8 @@
 export default {
 	fr: {
 		"welcome": "Bonjour, je m'appelle Thomas",
-		"tagline": "Je suis un développeur web Français de 25 ans.",
+		"tagline": "Je suis un développeur web Français de",
+		"taglineEnd": "ans.",
 		"projects": "Mes projets",
 		"experience": "Expérience",
 		"today": "Aujourd'hui",
@@ -10,7 +11,8 @@ export default {
 	},
 	en : {
 		"welcome": "Hello my name is Thomas",
-		"tagline": "I am a French web developer, 25 years old.",
+		"tagline": "I am a French web developer,",
+		"taglineEnd": "years old.",
 		"projects": "My projects",
 		"experience": "Experience",
 		"today": "today",
